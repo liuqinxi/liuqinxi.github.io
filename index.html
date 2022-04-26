@@ -80,6 +80,8 @@
 		<nav class="header-smart-menu">
 			
 				
+					<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+				
 			
 				
 			
@@ -196,7 +198,7 @@
             
 
   
-    <article id="post-OneMyBlog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-webpack4-5" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -204,7 +206,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2022/04/26/OneMyBlog/" target="_blank">OneMyBlog</a>
+	  <a class="article-title" href="/2022/04/26/webpack4-5/" target="_blank">webpack4和webpack5的区别</a>
   
     </h1>
   
@@ -212,8 +214,8 @@
 
   
   
-<a href="/2022/04/26/OneMyBlog/" class="archive-article-date">
-        <time datetime="2022-04-26T00:56:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
+<a href="/2022/04/26/webpack4-5/" class="archive-article-date">
+        <time datetime="2022-04-26T13:47:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
 </a>
 
   
@@ -225,6 +227,14 @@
   
   <div class="article-entry" itemprop="articleBody">
     
+    <h2 id="webpack4和webpack5的区别？"><a href="#webpack4和webpack5的区别？" class="headerlink" title="webpack4和webpack5的区别？"></a>webpack4和webpack5的区别？</h2><h5 id="1、Tree-Shaking-强大"><a href="#1、Tree-Shaking-强大" class="headerlink" title="1、Tree Shaking(强大)"></a>1、Tree Shaking(强大)</h5><p>tree-shaking 就可以把没有用的那些东西剔除掉，来大大减少最终的bundle体积。</p>
+<ul>
+<li>usedExports : true, 标记没有用的叶子</li>
+<li>minimize: true, 摇掉那些没有用的叶子</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js中</span></span><br><span class="line"></span><br><span class="line"> <span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">optimization</span>: &#123;</span><br><span class="line"></span><br><span class="line">      <span class="attr">usedExports</span>: <span class="literal">true</span>, <span class="comment">//只导出被使用的模块</span></span><br><span class="line"></span><br><span class="line">      minimize : <span class="literal">true</span> <span class="comment">// 启动压缩</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    
+    <a class="article-more-a" href="/2022/04/26/webpack4-5/#more">more >></a>
     
     
 
@@ -236,11 +246,33 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2022/04/26/OneMyBlog/">展开全文 >></a>
+      <a class="article-more-a" href="/2022/04/26/webpack4-5/">展开全文 >></a>
     </p>
     
 
@@ -270,7 +302,7 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-webpack" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
@@ -278,7 +310,7 @@
   
     <h1 itemprop="name">
 	
-	  <a class="article-title" href="/2022/04/26/hello-world/" target="_blank">Hello World</a>
+	  <a class="article-title" href="/2019/04/14/webpack/" target="_blank">认识webpack</a>
   
     </h1>
   
@@ -286,8 +318,8 @@
 
   
   
-<a href="/2022/04/26/hello-world/" class="archive-article-date">
-        <time datetime="2022-04-26T00:50:44.778Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
+<a href="/2019/04/14/webpack/" class="archive-article-date">
+        <time datetime="2019-04-14T13:24:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
 </a>
 
   
@@ -299,20 +331,16 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">u故意很多人头发一股hi几乎跟v付出太多</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+    <h4 id="webpack是什么？"><a href="#webpack是什么？" class="headerlink" title="webpack是什么？"></a>webpack是什么？</h4><p>webpack是前端资源加载&#x2F;大包的工具，他根据模块的依赖关系进行静态分析，然后根据指定的规则生成静态资源。</p>
+<h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><p>webapck可以将多种静态资源js,css,html等转换成一个静态文件，减少页面请求。</p>
+<h4 id="核心概念："><a href="#核心概念：" class="headerlink" title="核心概念："></a>核心概念：</h4><p>1：entry:指定入口，打包的时候告诉webpack从哪个文件开始打包</p>
+<p>2：output:指定出口，打包后的文件指定输出路径和文件名，将文件写入文件系统</p>
+<p>3：loader:转换器，简单来说就是将一段代码转换成另一段代码，webpack只能解析JavaScript代码，将代码转换成webpack能解析的JavaScript</p>
+<p>4：plugin:插件，可以用于范围更广的任务，完成loader不能完成的任务，比如代码优化和压缩等</p>
+<p>5：mode：模式，null,development(开发模式)，production(生产模式)</p>
+    
+    <a class="article-more-a" href="/2019/04/14/webpack/#more">more >></a>
+    
     
 
     
@@ -323,11 +351,33 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
     <p class="article-more-link">
-      <a class="article-more-a" href="/2022/04/26/hello-world/">展开全文 >></a>
+      <a class="article-more-a" href="/2019/04/14/webpack/">展开全文 >></a>
     </p>
     
 
@@ -405,7 +455,7 @@
 		open_in_new: true,
 		toc_hide_index: true,
 		root: "/",
-		innerArchive: false,
+		innerArchive: true,
 		showTags: true
 	}
 </script>
@@ -440,6 +490,8 @@
     
     
       
+      
+      
     
       
     
@@ -451,6 +503,8 @@
     
     
       
+      <li style="width: 100%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      
         
       
         
@@ -459,6 +513,65 @@
     </ul>
   </div>
   <div class="tools-wrap">
+    
+    	<section class="tools-section tools-section-all" q-show="innerArchive">
+        <div class="search-wrap">
+          <input class="search-ipt" q-model="search" type="text" placeholder="find something…">
+          <i class="icon-search icon" q-show="search|isEmptyStr"></i>
+          <i class="icon-close icon" q-show="search|isNotEmptyStr" q-on="click:clearChose(e)"></i>
+        </div>
+        <div class="widget tagcloud search-tag">
+          <p class="search-tag-wording">tag:</p>
+          <label class="search-switch">
+            <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
+          </label>
+          <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+              </li>
+            
+            <div class="clearfix"></div>
+          </ul>
+        </div>
+        <ul class="search-ul">
+          <p q-show="jsonFail" style="padding: 20px; font-size: 12px;">
+            缺失模块。<br/>1、请确保node版本大于6.2<br/>2、在博客根目录（注意不是yilia-plus根目录）执行以下命令：<br/> npm i hexo-generator-json-content --save<br/><br/>
+            3、在根目录_config.yml里添加配置：
+<pre style="font-size: 12px;" q-show="jsonFail">
+  jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+</pre>
+          </p>
+          <li class="search-li" q-repeat="items" q-show="isShow">
+            <a q-attr="href:path|urlformat" class="search-title"><i class="icon-quo-left icon"></i><span q-text="title"></span></a>
+            <p class="search-time">
+              <i class="icon-calendar icon"></i>
+              <span q-text="date|dateformat"></span>
+            </p>
+            <p class="search-tag">
+              <i class="icon-price-tags icon"></i>
+              <span q-repeat="tags" q-on="click:choseTag(e, name)" q-text="name|tagformat"></span>
+            </p>
+          </li>
+        </ul>
+    	</section>
     
 
     

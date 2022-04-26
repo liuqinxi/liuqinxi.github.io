@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2022/4 | Hexo</title>
+  <title>webpack4和webpack5的区别 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2022/04/index.html">
+  <meta name="description" content="webpack4和webpack5的区别？1、Tree Shaking(强大)tree-shaking 就可以把没有用的那些东西剔除掉，来大大减少最终的bundle体积。  usedExports : true, 标记没有用的叶子 minimize: true, 摇掉那些没有用的叶子  1234567891011121314&#x2F;&#x2F; webpack.config.js中 module.exports">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack4和webpack5的区别">
+<meta property="og:url" content="http://example.com/2022/04/26/webpack4-5/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webpack4和webpack5的区别？1、Tree Shaking(强大)tree-shaking 就可以把没有用的那些东西剔除掉，来大大减少最终的bundle体积。  usedExports : true, 标记没有用的叶子 minimize: true, 摇掉那些没有用的叶子  1234567891011121314&#x2F;&#x2F; webpack.config.js中 module.exports">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-26T13:47:03.000Z">
+<meta property="article:modified_time" content="2022-04-26T14:02:37.710Z">
 <meta property="article:author" content="QinxiBlog">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -191,41 +196,119 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-webpack4-5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/26/webpack4-5/" class="archive-article-date">
-        <time datetime="2022-04-26T13:47:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/26/webpack4-5/" target="_blank">webpack4和webpack5的区别</a>
   
+    <h1 class="article-title" itemprop="name">
+      webpack4和webpack5的区别
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/04/26/webpack4-5/" class="archive-article-date">
+        <time datetime="2022-04-26T13:47:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">477字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">2分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="webpack4和webpack5的区别？"><a href="#webpack4和webpack5的区别？" class="headerlink" title="webpack4和webpack5的区别？"></a>webpack4和webpack5的区别？</h2><h5 id="1、Tree-Shaking-强大"><a href="#1、Tree-Shaking-强大" class="headerlink" title="1、Tree Shaking(强大)"></a>1、Tree Shaking(强大)</h5><p>tree-shaking 就可以把没有用的那些东西剔除掉，来大大减少最终的bundle体积。</p>
+<ul>
+<li>usedExports : true, 标记没有用的叶子</li>
+<li>minimize: true, 摇掉那些没有用的叶子</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js中</span></span><br><span class="line"></span><br><span class="line"> <span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attr">optimization</span>: &#123;</span><br><span class="line"></span><br><span class="line">      <span class="attr">usedExports</span>: <span class="literal">true</span>, <span class="comment">//只导出被使用的模块</span></span><br><span class="line"></span><br><span class="line">      minimize : <span class="literal">true</span> <span class="comment">// 启动压缩</span></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<span id="more"></span>
+
+<h5 id="2-压缩代码"><a href="#2-压缩代码" class="headerlink" title="2.压缩代码"></a>2.压缩代码</h5><p>webpack4 上需要下载安装 terser-webpack-plugin 插件</p>
+<p>webpack5 内部本身就自带 js 压缩功能，他内置了 terser-webpack-plugin 插件，不用再下载安装。而且在 mode&#x3D;“production” 的时候会自动开启 js 压缩功能。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js中</span></span><br><span class="line"></span><br><span class="line">  <span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line"></span><br><span class="line">     <span class="attr">optimization</span>: &#123;</span><br><span class="line"></span><br><span class="line">       <span class="attr">usedExports</span>: <span class="literal">true</span>, <span class="comment">//只导出被使用的模块</span></span><br><span class="line"></span><br><span class="line">       minimize : <span class="literal">true</span> <span class="comment">// 启动压缩</span></span><br><span class="line"></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="3-缓存配置"><a href="#3-缓存配置" class="headerlink" title="3.缓存配置"></a>3.缓存配置</h5><p>webpack4 缓存配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">npm install hard-source-webpack-plugin -D</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> <span class="title class_">HardSourceWebpackPlugin</span> = <span class="built_in">require</span>(<span class="string">&#x27;hard-source-webpack-plugin&#x27;</span>) </span><br><span class="line"></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123; </span><br><span class="line"><span class="attr">plugins</span>: [</span><br><span class="line">  <span class="comment">// 其它 plugin... </span></span><br><span class="line">  <span class="keyword">new</span> <span class="title class_">HardSourceWebpackPlugin</span>(), </span><br><span class="line">] &#125;</span><br></pre></td></tr></table></figure>
+
+<p>webpack5 缓存配置</p>
+<p>webpack5 内部内置了 cache 缓存机制。直接配置即可。</p>
+<p>cache 会在开发模式下被设置成 type： memory 而且会在生产模式把cache 给禁用掉。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span>= &#123;</span><br><span class="line">  <span class="comment">// 使用持久化缓存</span></span><br><span class="line">  <span class="attr">cache</span>: &#123;</span><br><span class="line">    <span class="attr">type</span>: <span class="string">&#x27;filesystem&#x27;</span>，</span><br><span class="line">    <span class="attr">cacheDirectory</span>: path.<span class="title function_">join</span>(__dirname, <span class="string">&#x27;node_modules/.cac/webpack&#x27;</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-启动服务的差别"><a href="#4-启动服务的差别" class="headerlink" title="4.启动服务的差别"></a>4.启动服务的差别</h5><p>webpack4 启动服务<br>    通过 webpack-dev-server 启动服务</p>
+<p>webpack5 启动服务<br>内置使用 webpack serve 启动，但是他的日志不是很好，所以一般喜欢用 webpack-dev-server 优化</p>
+<h5 id="5-打包"><a href="#5-打包" class="headerlink" title="5.打包"></a>5.打包</h5><p>webpack4打包:即使后续没有使用到的函数，依然会将代码打包进去</p>
+<p>webpack5打包:后续没有使用到的函数，不会将代码打包进去</p>
+<h5 id="6-输出代码"><a href="#6-输出代码" class="headerlink" title="6.输出代码"></a>6.输出代码</h5><p>webpack4只能输出es5的代码</p>
+<p>webpack5新增属性output.ecmaVersion，可以生成ES5和ES6的代码</p>
+<h5 id="7-分割代码块（splitChunk）"><a href="#7-分割代码块（splitChunk）" class="headerlink" title="7.分割代码块（splitChunk）"></a>7.分割代码块（splitChunk）</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack4将超过30kb的文件单独提为一个chunk</span></span><br><span class="line"><span class="attr">minSize</span>: <span class="number">30000</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// webpack5可以区分是js还是css,可以精确划分</span></span><br><span class="line"><span class="attr">minSize</span>:&#123;<span class="attr">javascript</span>:<span class="number">30000</span>,<span class="attr">css</span>:<span class="number">50000</span>&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          QinxiBlog
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2022/04/26/webpack4-5/" title="webpack4和webpack5的区别" target="_blank">http://example.com/2022/04/26/webpack4-5/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -237,7 +320,7 @@
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
@@ -250,17 +333,105 @@
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
+    
 
     
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/26/webpack4-5/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/14/webpack/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">认识webpack</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
           </div>
@@ -301,8 +472,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
