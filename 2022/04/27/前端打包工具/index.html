@@ -6,16 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Tag: webpack | Hexo</title>
+  <title>前端打包工具 | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/tags/webpack/index.html">
+  <meta name="description" content="webpack，grunt,gulp,vite,fis3,Rollup,Pacel？webpack: 就目前而言，weboack是最常用的打包工具，基于入口，webpack会自动递归解析入口所需要的所有资源，然后不同的loader处理不同的文件，用plugin来扩展webpack功能 gulp:">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端打包工具">
+<meta property="og:url" content="http://example.com/2022/04/27/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="webpack，grunt,gulp,vite,fis3,Rollup,Pacel？webpack: 就目前而言，weboack是最常用的打包工具，基于入口，webpack会自动递归解析入口所需要的所有资源，然后不同的loader处理不同的文件，用plugin来扩展webpack功能 gulp:">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-04-27T01:38:30.000Z">
+<meta property="article:modified_time" content="2022-04-27T01:40:58.759Z">
 <meta property="article:author" content="QinxiBlog">
+<meta property="article:tag" content="前端打包工具">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
@@ -191,356 +196,299 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-前端打包工具" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2022" class="archive-year">2022</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/27/webpack-%E4%BC%98%E5%8C%96/" class="archive-article-date">
-        <time datetime="2022-04-27T01:44:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/27/webpack-%E4%BC%98%E5%8C%96/" target="_blank">webpack_优化</a>
   
+    <h1 class="article-title" itemprop="name">
+      前端打包工具
     </h1>
   
 
 
-        <div class="article-info info-on-right">
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2022/04/27/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" class="archive-article-date">
+        <time datetime="2022-04-27T01:38:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">1.1k字</span>
+    </span>
+  </span>
+
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">4分</span>
+    </span>
+  </span>
+</div>
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="webpack，grunt-gulp-vite-fis3-Rollup-Pacel？"><a href="#webpack，grunt-gulp-vite-fis3-Rollup-Pacel？" class="headerlink" title="webpack，grunt,gulp,vite,fis3,Rollup,Pacel？"></a>webpack，grunt,gulp,vite,fis3,Rollup,Pacel？</h2><p><strong>webpack:</strong></p>
+<p>就目前而言，weboack是最常用的打包工具，基于入口，webpack会自动递归解析入口所需要的所有资源，然后不同的loader处理不同的文件，用plugin来扩展webpack功能</p>
+<p><strong>gulp:</strong></p>
+<span id="more"></span>
+
+<p>gulp是前端自动化构建工具，强调的是前端开发的工作流程，可以通过配置一系列的task.自动化构建工具并不能把所有的模块打包，也不能构建不同模块之间的依赖关系</p>
+<p><strong>grunt:</strong></p>
+<p>基于任务和流的，类似于jQuery,找到一个文件，对其做 一系列的链式操作，更新流上的数据，整条链式操作构成了一个任务，多个任务就构成了整个web的构建流程</p>
+<p><strong>Rollup:</strong></p>
+<p>是一款ES Modules打包器，从作用上来看，Rollup与webpack非常类似，不过相比于webpack，Rollup要小巧的多，专门打包js</p>
+<p>我们熟知的库都是用他进行打包，比如：vue,react等</p>
+<p><strong>Parcel:</strong></p>
+<p>是一款完全零配置的前端打包器，它提供了傻瓜式的使用体验，只需要了解简单的命令，就能构建前端应用程序</p>
+<p>Parcel 跟 Webpack 一样都支持以任意类型文件作为打包入口，但建议使用 HTML文件作为入口，该HTML文件像平时一样正常编写代码、引用资源。</p>
+<p><strong>vite:</strong></p>
+<p>是vue作者尤雨溪开发的web开发构建工具，基于浏览器原生es模块导入的开发服务器，在开发环境下，利用浏览器去解析import,在服务器按需编译返回，完全跳过打包的概念，服务器随启随用，同时不仅对vue提供了支持，还支持热更新，热更新的速度不会随着模块增多而变慢。</p>
+<p>特点：- 快速的冷启动 - 即时热模块更新（HMR，Hot Module Replacement） - 真正按需编译</p>
+<p><strong>fis3:</strong></p>
+<p>百度研发的，静态资源动态按需加载。</p>
+<h4 id="webpack-Rollup-Pacel区别？"><a href="#webpack-Rollup-Pacel区别？" class="headerlink" title="webpack Rollup Pacel区别？"></a>webpack Rollup Pacel区别？</h4><table>
+<thead>
+<tr>
+<th>对比</th>
+<th>Webpack</th>
+<th>Rollup</th>
+<th>Parcel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>功能</td>
+<td>为处理资源管理和分割代码而生，可以用来处理任何类型的文件，灵活，插件多。</td>
+<td>用标准化的格式（es6）来写代码，通过减少死代码尽可能地缩小包体积。</td>
+<td>用标准化的格式（es6）来写代码，通过减少死代码尽可能地缩小包体积。</td>
+</tr>
+<tr>
+<td>配置</td>
+<td>webpack需要配config文件，指明entry, output, plugin，transformations。</td>
+<td>rollup需要配config文件，指明entry, output, plugin，transformations。rollup 有对import&#x2F;export所做的node polyfills，webpack没有。rollup支持相对路径，而webpack没有，所以得使用</td>
+<td>parcel则是完全开箱可用的，不用配置。</td>
+</tr>
+<tr>
+<td>入口文件</td>
+<td>webpack只支持js文件作为入口文件，如果要以其他格式的文件作为入口，比如html文件为入口，如要加第三方Plugin。</td>
+<td>rollup可以用html作为入口文件，但也需要plugin，比如rollup-plugin-html-entry。</td>
+<td>parcel可以用index.html作为入口文件，而且它会通过看index.html的script tag里包含的什么自己找到要打包生成哪些js文件。</td>
+</tr>
+<tr>
+<td>transformations</td>
+<td>transformations指的是把其他文件转化成js文件的过程，需要经过transformation才能够被打包。webpack使用Loaders来处理。</td>
+<td>rollup使用plugins来处理。</td>
+<td>parcel会自动去转换，当找到配置文件比如.babelrc, .postcssrc后就会自动转。</td>
+</tr>
+<tr>
+<td>摇树优化</td>
+<td>摇树优化是webpack的一大特性。需要1，用import&#x2F;export语法，2，在package.json中加副作用的入口，3，加上支持去除死代码的缩小器（uglifyjsplugin）。</td>
+<td>rollup会统计引入的代码并排除掉那些没有被用到的。这使您可以在现有工具和模块的基础上构建，而无需添加额外的依赖项或膨胀项目的大小。</td>
+<td>parcel不支持摇树优化。</td>
+</tr>
+<tr>
+<td>dev server</td>
+<td>webpack用webpack-dev-server。</td>
+<td>rollup用rollup-plugin-serve和rollup-plugin-livereload共同作用。</td>
+<td>parcel内置的有dev server</td>
+</tr>
+<tr>
+<td>热更新</td>
+<td>webpack的 wepack-dev-server支持hot模式。</td>
+<td>rollup不支持hmr。</td>
+<td>parcel有内置的hmr。</td>
+</tr>
+<tr>
+<td>代码分割</td>
+<td>webpack通过在entry中手动设置，使用CommonsChunkPlugin，和模块内的内联函数动态引入来做代码分割。</td>
+<td>rollup有实验性的代码分割特性。它是用es模块在浏览器中的模块加载机制本身来分割代码的。需要把experimentalCodeSplitting 和 experimentalDynamicImport 设为true。</td>
+<td>parcel支持0配置的代码分割。主要是通过动态improt。</td>
+</tr>
+</tbody></table>
+
+    
+
+    
+
+    
+    <div class="declare"> 
+      <ul class="post-copyright">
+        <li>
+          <strong>本文作者：</strong>
+          QinxiBlog
+        </li>
+        <li>
+          <strong>本文链接：</strong>
+          <a href="http://example.com/2022/04/27/前端打包工具/" title="前端打包工具" target="_blank">http://example.com/2022/04/27/前端打包工具/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
           
+          本博客所有文章除特别声明外，均采用 <a href="https://github.com/JoeyBling/hexo-theme-yilia-plus/blob/master/LICENSE" rel="external nofollow" target="_blank">MIT</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">前端打包工具</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        			<a href="/categories/前端打包工具//" class="article-tag-list-link color2">前端打包工具</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+
+    
+    
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> -->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/27/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" alt="微信分享二维码"> -->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/27/webpack-proxy/" class="archive-article-date">
-        <time datetime="2022-04-27T01:34:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
-</a>
 
+
+<nav id="article-nav">
+  
+    <a href="/2022/04/27/webpack-%E4%BC%98%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          webpack_优化
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2022/04/27/webpack-proxy/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack_proxy</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/27/webpack-proxy/" target="_blank">webpack_proxy</a>
-  
-    </h1>
-  
+        
+        
+    </div>
+</aside>
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/27/plugin/" class="archive-article-date">
-        <time datetime="2022-04-27T01:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/27/plugin/" target="_blank">plugin</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/27/loader/" class="archive-article-date">
-        <time datetime="2022-04-27T01:24:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/27/loader/" target="_blank">webpack  Loader</a>
-  
-    </h1>
-  
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2022/04/26/webpack4-5/" class="archive-article-date">
-        <time datetime="2022-04-26T13:47:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2022/04/26/webpack4-5/" target="_blank">webpack4和webpack5的区别</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2019/04/14/webpack/" class="archive-article-date">
-        <time datetime="2019-04-14T13:24:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-14</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2019/04/14/webpack/" target="_blank">认识webpack</a>
-  
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -581,9 +529,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: true,
 		toc_hide_index: true,
