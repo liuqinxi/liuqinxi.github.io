@@ -198,6 +198,106 @@
             
 
   
+    <article id="post-webpack-tree-shaking" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/04/27/webpack-tree-shaking/" target="_blank">webpack tree-shaking</a>
+  
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/04/27/webpack-tree-shaking/" class="archive-article-date">
+        <time datetime="2022-04-27T06:39:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h3 id="什么是Tree-shaking"><a href="#什么是Tree-shaking" class="headerlink" title="什么是Tree-shaking?"></a><strong>什么是Tree-shaking?</strong></h3><p>tree-shaking:树摇，打包中去除哪些引入了但是在代码中没有用到的死码，在webpack中js treesharking通过UglifyJSPlugin来进行，css中通过purify-CSS来进行</p>
+<p>tree-sharking针对的是纯的ES模块，才能去除掉那些未使用的代码或成员以及导入的其他模块</p>
+    
+    <a class="article-more-a" href="/2022/04/27/webpack-tree-shaking/#more">more >></a>
+    
+    
+
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+    <p class="article-more-link">
+      <a class="article-more-a" href="/2022/04/27/webpack-tree-shaking/">展开全文 >></a>
+    </p>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-webpack-优化" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -227,7 +327,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="webpack优化：（开发环境和生产环境）"><a href="#webpack优化：（开发环境和生产环境）" class="headerlink" title="webpack优化：（开发环境和生产环境）"></a>webpack优化：（开发环境和生产环境）</h2><h2 id="首先要知道为什么要优化webpack？"><a href="#首先要知道为什么要优化webpack？" class="headerlink" title="首先要知道为什么要优化webpack？"></a>首先要知道为什么要优化webpack？</h2><p>​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个方案很是不好，加载很慢。</p>
+    <h2 id="webpack优化：（开发环境和生产环境）"><a href="#webpack优化：（开发环境和生产环境）" class="headerlink" title="webpack优化：（开发环境和生产环境）"></a>webpack优化：（开发环境和生产环境）</h2><h2 id="首先要知道为什么要优化webpack？"><a href="#首先要知道为什么要优化webpack？" class="headerlink" title="首先要知道为什么要优化webpack？"></a>首先要知道为什么要优化webpack？</h2><p>在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。</p>
+<p>​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个方案很是不好，加载很慢。</p>
 <h2 id="开发环境优化："><a href="#开发环境优化：" class="headerlink" title="开发环境优化："></a>开发环境优化：</h2><h3 id="优化打包构建速度-HMR"><a href="#优化打包构建速度-HMR" class="headerlink" title="优化打包构建速度 HMR"></a>优化打包构建速度 HMR</h3><p>​	HMR 全称 Hot Module Replacement，中文语境通常翻译为模块热更新，它能够在保持页面状态的情况下动态替换资源	模块，提供丝滑顺畅的 Web 页面开发体验。</p>
     
     <a class="article-more-a" href="/2022/04/27/webpack-%E4%BC%98%E5%8C%96/#more">more >></a>
@@ -846,7 +947,7 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h4 id="webpack是什么？"><a href="#webpack是什么？" class="headerlink" title="webpack是什么？"></a>webpack是什么？</h4><p>webpack是前端资源加载&#x2F;大包的工具，他根据模块的依赖关系进行静态分析，然后根据指定的规则生成静态资源。</p>
+    <h4 id="webpack是什么？"><a href="#webpack是什么？" class="headerlink" title="webpack是什么？"></a>webpack是什么？</h4><p>webpack是前端资源加载&#x2F;打包的工具，他根据模块的依赖关系进行静态分析，然后根据指定的规则生成静态资源。</p>
 <h4 id="作用："><a href="#作用：" class="headerlink" title="作用："></a>作用：</h4><p>webapck可以将多种静态资源js,css,html等转换成一个静态文件，减少页面请求。</p>
 <h4 id="核心概念："><a href="#核心概念：" class="headerlink" title="核心概念："></a>核心概念：</h4><p>1：entry:指定入口，打包的时候告诉webpack从哪个文件开始打包</p>
 <p>2：output:指定出口，打包后的文件指定输出路径和文件名，将文件写入文件系统</p>

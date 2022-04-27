@@ -6,19 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>分类 | Hexo</title>
+  <title>webpack tree-shaking | Hexo</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="分类">
-<meta property="og:url" content="http://example.com/categories/index.html">
+  <meta name="description" content="什么是Tree-shaking?tree-shaking:树摇，打包中去除哪些引入了但是在代码中没有用到的死码，在webpack中js treesharking通过UglifyJSPlugin来进行，css中通过purify-CSS来进行 tree-sharking针对的是纯的ES模块，才能去除掉那些未使用的代码或成员以及导入的其他模块">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack tree-shaking">
+<meta property="og:url" content="http://example.com/2022/04/27/webpack-tree-shaking/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="什么是Tree-shaking?tree-shaking:树摇，打包中去除哪些引入了但是在代码中没有用到的死码，在webpack中js treesharking通过UglifyJSPlugin来进行，css中通过purify-CSS来进行 tree-sharking针对的是纯的ES模块，才能去除掉那些未使用的代码或成员以及导入的其他模块">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-04-26T10:44:16.000Z">
-<meta property="article:modified_time" content="2022-04-27T07:52:48.181Z">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606152124154-2140837737.png">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606152836757-2013439339.png">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606153338606-64208927.png">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606153449160-121978646.png">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606152257098-494028917.png">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606153835043-129962384.png">
+<meta property="og:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606154016482-466219622.png">
+<meta property="article:published_time" content="2022-04-27T06:39:01.000Z">
+<meta property="article:modified_time" content="2022-04-27T08:19:28.665Z">
 <meta property="article:author" content="QinxiBlog">
+<meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2022/04/27/webpack-tree-shaking/1743698-20200606152124154-2140837737.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -193,14 +204,14 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="categories-" class="article article-type-categories " itemscope itemprop="blogPost">
+            <article id="post-webpack-tree-shaking" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
   
   
     <h1 class="article-title" itemprop="name">
-      分类
+      webpack tree-shaking
     </h1>
   
 
@@ -212,8 +223,8 @@
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-<a href="/categories/index.html" class="archive-article-date">
-        <time datetime="2022-04-26T10:44:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-26</time>
+<a href="/2022/04/27/webpack-tree-shaking/" class="archive-article-date">
+        <time datetime="2022-04-27T06:39:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-04-27</time>
 </a>
 
   
@@ -226,7 +237,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">0字</span>
+      <span class="post-count">342字</span>
     </span>
   </span>
 
@@ -246,7 +257,31 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    
+    <h3 id="什么是Tree-shaking"><a href="#什么是Tree-shaking" class="headerlink" title="什么是Tree-shaking?"></a><strong>什么是Tree-shaking?</strong></h3><p>tree-shaking:树摇，打包中去除哪些引入了但是在代码中没有用到的死码，在webpack中js treesharking通过UglifyJSPlugin来进行，css中通过purify-CSS来进行</p>
+<p>tree-sharking针对的是纯的ES模块，才能去除掉那些未使用的代码或成员以及导入的其他模块</p>
+<span id="more"></span>
+
+<h4 id="什么是纯的ES模块？"><a href="#什么是纯的ES模块？" class="headerlink" title="什么是纯的ES模块？"></a>什么是纯的ES模块？</h4><p>纯ES模块内部或其内部成员不依赖于其他ES模块</p>
+<p>纯ES模块不导入其他非ES模块</p>
+<p>纯ES模块除了导入和导出，没有多余的代码</p>
+<p><strong>作用：减少代码体积</strong></p>
+<p><strong>摇树要不干净怎么解决？</strong></p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606152124154-2140837737.png"></p>
+<p>test.js 中定义了 通过 ES6 模块 暴露了 add 和 count 两个方法，</p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606152836757-2013439339.png">}</p>
+<p>index.js 中 引入了 add 和 count 方法，但是 count 方法的返回值没有使用</p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606153338606-64208927.png"></p>
+<p>![](.&#x2F;webpack-tree-shaking&#x2F;1743698-20200606152257098-494028917 (1).png)</p>
+<p>文件中引入了方法，但是方法的返回值没有使用，webpack编译打包后的js文件中，没有方法的执行，自动去除了没有使用的代码，</p>
+<p>当在package.json中配置“sideEffects”:false时，所有的代码都可以进行tree-sharking,都没有副作用</p>
+<p>但是可能会把css&#x2F;@babel&#x2F;polyfill (副作用)文件去除，</p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606153449160-121978646.png"></p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606152257098-494028917.png"></p>
+<p>避免这种情况，需要重新配置，“sideEffects”:[“<em>.css”,”</em>.less”],过滤这些文件使用tree shaking</p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606153835043-129962384.png"></p>
+<p><img src="/2022/04/27/webpack-tree-shaking/1743698-20200606154016482-466219622.png"></p>
+<p>css文件就保存了</p>
+
     
 
     
@@ -260,7 +295,7 @@
         </li>
         <li>
           <strong>本文链接：</strong>
-          <a href="http://example.com/categories/index.html" title="分类" target="_blank">http://example.com/categories/index.html</a>
+          <a href="http://example.com/2022/04/27/webpack-tree-shaking/" title="webpack tree-shaking" target="_blank">http://example.com/2022/04/27/webpack-tree-shaking/</a>
         </li>
         
         <li>
@@ -277,7 +312,29 @@
   <div class="article-info article-info-index">
     
     
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
     
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/webpack//" class="article-tag-list-link color3">webpack</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
     
 
@@ -327,7 +384,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/categories/" alt="微信分享二维码"> -->
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2022/04/27/webpack-tree-shaking/" alt="微信分享二维码"> -->
     </div>
 </div>
 
@@ -339,6 +396,16 @@
   </div>
 </article>
 
+
+<nav id="article-nav">
+  
+  
+    <a href="/2022/04/27/webpack-%E4%BC%98%E5%8C%96/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">webpack_优化</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
 
 <aside class="wrap-side-operation">
@@ -408,7 +475,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

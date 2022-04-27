@@ -10,15 +10,15 @@
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta name="description" content="webpack优化：（开发环境和生产环境）首先要知道为什么要优化webpack？​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个方案很是不好，加载很慢。 开发环境优化：优化打包构建速度 HMR​	HMR 全称 Hot Module Replacement，中文语境通常翻译为模块热更新，它能够在保持页面状态的情况下动态替换资源">
+  <meta name="description" content="webpack优化：（开发环境和生产环境）首先要知道为什么要优化webpack？在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。 ​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个">
 <meta property="og:type" content="article">
 <meta property="og:title" content="webpack_优化">
 <meta property="og:url" content="http://example.com/2022/04/27/webpack-%E4%BC%98%E5%8C%96/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="webpack优化：（开发环境和生产环境）首先要知道为什么要优化webpack？​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个方案很是不好，加载很慢。 开发环境优化：优化打包构建速度 HMR​	HMR 全称 Hot Module Replacement，中文语境通常翻译为模块热更新，它能够在保持页面状态的情况下动态替换资源">
+<meta property="og:description" content="webpack优化：（开发环境和生产环境）首先要知道为什么要优化webpack？在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。 ​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-04-27T01:44:33.000Z">
-<meta property="article:modified_time" content="2022-04-27T01:48:04.425Z">
+<meta property="article:modified_time" content="2022-04-27T03:39:16.494Z">
 <meta property="article:author" content="QinxiBlog">
 <meta property="article:tag" content="webpack">
 <meta name="twitter:card" content="summary">
@@ -229,7 +229,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">2.8k字</span>
+      <span class="post-count">2.9k字</span>
     </span>
   </span>
 
@@ -238,7 +238,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">11分</span>
+      <span class="post-count">12分</span>
     </span>
   </span>
 </div>
@@ -249,7 +249,8 @@
   
   <div class="article-entry" itemprop="articleBody">
     
-    <h2 id="webpack优化：（开发环境和生产环境）"><a href="#webpack优化：（开发环境和生产环境）" class="headerlink" title="webpack优化：（开发环境和生产环境）"></a>webpack优化：（开发环境和生产环境）</h2><h2 id="首先要知道为什么要优化webpack？"><a href="#首先要知道为什么要优化webpack？" class="headerlink" title="首先要知道为什么要优化webpack？"></a>首先要知道为什么要优化webpack？</h2><p>​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个方案很是不好，加载很慢。</p>
+    <h2 id="webpack优化：（开发环境和生产环境）"><a href="#webpack优化：（开发环境和生产环境）" class="headerlink" title="webpack优化：（开发环境和生产环境）"></a>webpack优化：（开发环境和生产环境）</h2><h2 id="首先要知道为什么要优化webpack？"><a href="#首先要知道为什么要优化webpack？" class="headerlink" title="首先要知道为什么要优化webpack？"></a>首先要知道为什么要优化webpack？</h2><p>在使用Webpack时，如果不注意性能优化，有非常大的可能会产生性能问题，性能问题主要分为开发时打包构建速度慢、开发调试时的重复性工作、以及输出文件质量不高等，因此性能优化也主要从这些方面来分析。</p>
+<p>​	不就是因为在开发阶段可以及时的编译和浏览器实时刷新页面知道最新的内容嘛，   但是如果说模块很多的话  刷新页	面这个方案很是不好，加载很慢。</p>
 <h2 id="开发环境优化："><a href="#开发环境优化：" class="headerlink" title="开发环境优化："></a>开发环境优化：</h2><h3 id="优化打包构建速度-HMR"><a href="#优化打包构建速度-HMR" class="headerlink" title="优化打包构建速度 HMR"></a>优化打包构建速度 HMR</h3><p>​	HMR 全称 Hot Module Replacement，中文语境通常翻译为模块热更新，它能够在保持页面状态的情况下动态替换资源	模块，提供丝滑顺畅的 Web 页面开发体验。</p>
 <span id="more"></span>
 
@@ -431,6 +432,15 @@
 
 
 <nav id="article-nav">
+  
+    <a href="/2022/04/27/webpack-tree-shaking/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          webpack tree-shaking
+        
+      </div>
+    </a>
   
   
     <a href="/2022/04/27/%E5%89%8D%E7%AB%AF%E6%89%93%E5%8C%85%E5%B7%A5%E5%85%B7/" id="article-nav-older" class="article-nav-link-wrap">
