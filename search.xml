@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>vue和react技术选型</title>
+      <link href="/2022/04/30/vue%E5%92%8Creact%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/"/>
+      <url>/2022/04/30/vue%E5%92%8Creact%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/</url>
+      
+        <content type="html"><![CDATA[<h2 id="vue和react技术选型？"><a href="#vue和react技术选型？" class="headerlink" title="vue和react技术选型？"></a>vue和react技术选型？</h2><p>相同点：</p><ol><li>数据驱动页面，提供响应式的视图组件</li><li>都有虚拟DOM，组件化的开发，通过props参数进行父子之间的组件传递数据，都是先了webComponents规范</li><li>数据流动单向，都支持服务器的渲染的SSR</li><li>都有支持native的方法，react有React native,vue 有vuex</li></ol><p>不同点：</p><ol><li>数据绑定：vue实现了双向的数据绑定，react数据流动是单向的</li><li>数据渲染：大规模的数据渲染，，react更快</li><li>使用场景：react配合redux架构适合大规模多人协作复杂项目，vue适合小快的项目</li><li>开发风格：react推荐做法jsx+inline style把html和css都写在js了，vue采用的式webpack+vue-loader单文件组件格式，html,js,css同一文件。</li></ol><h2 id="nextTick"><a href="#nextTick" class="headerlink" title="nextTick"></a>nextTick</h2><p>nextTick可以让我们在<strong>下次DOM更新循环结束之后执行延迟回调</strong>，用于获得更新后的DOM</p><p>nextTIck主要使用了宏任务和微任务，根据执行环境分别尝试采用</p><p>promise</p><p>MutatuionObserver</p><p>serTimmediate</p><p>如果以上都不行，采用setTimeout</p><p>定义一个异步方法，多次调用nextTick会将方法存入队列中，通过这个异步方法清空当前队列。</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 前端 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>mvvm框架</title>
       <link href="/2022/04/30/mvvm%E6%A1%86%E6%9E%B6/"/>
       <url>/2022/04/30/mvvm%E6%A1%86%E6%9E%B6/</url>
