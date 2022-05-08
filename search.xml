@@ -98,6 +98,31 @@
     
     
     <entry>
+      <title>js事件委托</title>
+      <link href="/2019/05/06/js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/"/>
+      <url>/2019/05/06/js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</url>
+      
+        <content type="html"><![CDATA[<h3 id="事件委托？"><a href="#事件委托？" class="headerlink" title="事件委托？"></a>事件委托？</h3><p>事件委托，简单的来说，就是把一个元素的响应事件的函数委托到另一个元素。一般来讲，会把一个或者一组元素的事件委托到它的父层或者更外层元素上，真正绑定事件的是外层元素，当事件响应到需要绑定的元素上时，会通过<a href="https://so.csdn.net/so/search?q=%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1&spm=1001.2101.3001.7020">事件冒泡</a>机制从而触发它的外层元素的绑定事件上，然后在外层元素上去执行函数。</p><h3 id="事件传播"><a href="#事件传播" class="headerlink" title="事件传播"></a>事件传播</h3><p>事件的传播分为三个阶段：<strong>捕获阶段</strong>、<strong>目标阶段</strong>、<strong>冒泡阶段</strong>。</p><ol><li><strong>捕获阶段</strong> —— 从<code>window</code>，<code>document</code> 和根元素开始，事件向下扩散至目标元素的祖先</li><li><strong>目标阶段</strong> —— 事件在用户单击的元素上触发</li><li><strong>冒泡阶段</strong>——最后，事件冒泡通过目标元素的祖先，一直到根元素 <code>document</code> 和 <code>window</code>。</li></ol><p><img src="/2019/05/06/js%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/2b2ef2362a82871946bbbb6ad807482b.png"></p><h3 id="事件委托的好处"><a href="#事件委托的好处" class="headerlink" title="事件委托的好处"></a>事件委托的好处</h3><p>1.减少DOM操作，提高性能。</p><p>2.随时可以添加子元素，添加的子元素会自动有相应的处理事件。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>vue和react技术选型</title>
       <link href="/2019/04/30/vue%E5%92%8Creact%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/"/>
       <url>/2019/04/30/vue%E5%92%8Creact%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/</url>
@@ -243,6 +268,31 @@
     
     
     <entry>
+      <title>react有哪些优化性能的手段</title>
+      <link href="/2018/10/08/react%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E6%80%A7%E8%83%BD%E7%9A%84%E6%89%8B%E6%AE%B5/"/>
+      <url>/2018/10/08/react%E6%9C%89%E5%93%AA%E4%BA%9B%E4%BC%98%E5%8C%96%E6%80%A7%E8%83%BD%E7%9A%84%E6%89%8B%E6%AE%B5/</url>
+      
+        <content type="html"><![CDATA[<h3 id="类组件种的优化手段"><a href="#类组件种的优化手段" class="headerlink" title="类组件种的优化手段"></a>类组件种的优化手段</h3><ul><li>使用纯组件PureComponent作为基类</li><li>使用shouldComponentUpdate生命周期函数来自定义渲染逻辑</li></ul><h3 id="方法组件中的优化手段"><a href="#方法组件中的优化手段" class="headerlink" title="方法组件中的优化手段"></a>方法组件中的优化手段</h3><ul><li><p>使用React.memo高阶函数包装组件，React.memo可以实现类似于shouldComponentUpdate或者PureComponent的效果</p></li><li><p>使用useMemo</p><p>使用React.useMemo精细化的管控，useMemo控制的是是否需要重复执行某一段逻辑，而React.memo控制是否需要重新渲染一个组件</p></li><li><p>使用useCallBack</p></li></ul><h3 id="其他方式"><a href="#其他方式" class="headerlink" title="其他方式"></a>其他方式</h3><ul><li>在列表需要频繁变动时，使用唯一id作为key,而不是数组下标</li><li>必要时通过改变css样式隐藏显示组件，而不是通过条件判断显示隐藏组件</li><li>使用Suspense和lazy进行懒加载</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>发布订阅模式和观察者模式</title>
       <link href="/2018/10/01/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
       <url>/2018/10/01/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F%E5%92%8C%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/</url>
@@ -260,6 +310,106 @@
         <tags>
             
             <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js内存泄漏</title>
+      <link href="/2018/09/15/js%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
+      <url>/2018/09/15/js%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/</url>
+      
+        <content type="html"><![CDATA[<h3 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h3><ul><li>意外的全局变量: 无法被回收</li><li>定时器: 未被正确关闭，导致所引用的外部变量无法被释放</li><li>事件监听: 没有正确销毁 (低版本浏览器可能出现)</li><li>闭包<ul><li>第一种情况是我们由于使用未声明的变量，而意外的创建了一个全局变量，而使这个变量一直留在内存中无法被回收。</li><li>第二种情况是我们设置了setInterval定时器，而忘记取消它，如果循环函数有对外部变量的引用的话，那么这个变量会被一直留在内存中，而无法被回收。</li><li>第三种情况是我们获取一个DOM元素的引用，而后面这个元素被删除，由于我们一直保留了对这个元素的引用，所以它也无法被回收。</li><li>第四种情况是不合理的使用闭包，从而导致某些变量一直被留在内存当中。</li></ul></li><li><code>dom</code> 引用: <code>dom</code> 元素被删除时，内存中的引用未被正确清空</li><li>控制台<code>console.log</code>打印的东西</li></ul><blockquote><p>可用 <code>chrome</code> 中的 <code>timeline</code> 进行内存标记，可视化查看内存的变化情况，找出异常点。</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js垃圾回收</title>
+      <link href="/2018/09/10/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
+      <url>/2018/09/10/js%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>对于在JavaScript中的字符串，对象，数组是没有固定大小的，只有当对他们进行动态分配存储时，解释器就会分配内存来存储这些数据，当JavaScript的解释器消耗完系统中所有可用的内存时，就会造成系统崩溃。</p></li><li><p>内存泄漏，在某些情况下，不再使用到的变量所占用内存没有及时释放，导致程序运行中，内存越占越大，极端情况下可以导致系统崩溃，服务器宕机。</p></li><li><p>JavaScript有自己的一套垃圾回收机制，<strong>JavaScript的解释器可以检测到什么时候程序不再使用这个对象了（数据），就会把它所占用的内存释放掉。</strong></p></li><li><p>针对JavaScript的来及回收机制有以下两种方法（常用）：<strong>标记清除，引用计数</strong></p></li><li><h3 id="标记清除"><a href="#标记清除" class="headerlink" title="标记清除"></a>标记清除</h3></li></ul><blockquote><p>v8 的垃圾回收机制基于分代回收机制，这个机制又基于世代假说，这个假说有两个特点，一是新生的对象容易早死，另一个是不死的对象会活得更久。基于这个假说，v8 引擎将内存分为了新生代和老生代。</p></blockquote><ul><li>新创建的对象或者只经历过一次的垃圾回收的对象被称为新生代。经历过多次垃圾回收的对象被称为老生代。</li><li>新生代被分为 From 和 To 两个空间，To 一般是闲置的。当 From 空间满了的时候会执行 Scavenge 算法进行垃圾回收。当我们执行垃圾回收算法的时候应用逻辑将会停止，等垃圾回收结束后再继续执行。</li></ul><p><strong>这个算法分为三步：</strong></p><ul><li>首先检查 From 空间的存活对象，如果对象存活则判断对象是否满足晋升到老生代的条件，如果满足条件则晋升到老生代。如果不满足条件则移动 To 空间。</li><li>如果对象不存活，则释放对象的空间。</li><li>最后将 From 空间和 To 空间角色进行交换。</li></ul><p><strong>新生代对象晋升到老生代有两个条件：</strong></p><ul><li>第一个是判断是对象否已经经过一次 Scavenge 回收。若经历过，则将对象从 From 空间复制到老��代中；若没有经历，则复制到 To 空间。</li><li>第二个是 To 空间的内存使用占比是否超过限制。当对象从 From 空间复制到 To 空间时，若 To 空间使用超过 25%，则对象直接晋升到老生代中。设置 25% 的原因主要是因为算法结束后，两个空间结束后会交换位置，如果 To 空间的内存太小，会影响后续的内存分配。</li></ul><blockquote><p>老生代采用了标记清除法和标记压缩法。标记清除法首先会对内存中存活的对象进行标记，标记结束后清除掉那些没有标记的对象。由于标记清除后会造成很多的内存碎片，不便于后面的内存分配。所以了解决内存碎片的问题引入了标记压缩法。</p></blockquote><p>由于在进行垃圾回收的时候会暂停应用的逻辑，对于新生代方法由于内存小，每次停顿的时间不会太长，但对于老生代来说每次垃圾回收的时间长，停顿会造成很大的影响。 为了解决这个问题 V8 引入了增量标记的方法，将一次停顿进行的过程分为了多步，每次执行完一小步就让运行逻辑执行一会，就这样交替运行</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>js事件冒泡</title>
+      <link href="/2018/09/06/js%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/"/>
+      <url>/2018/09/06/js%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2018/09/06/js%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/Snipaste_2022-05-06_10-05-59.png"></p><p><img src="/2018/09/06/js%E4%BA%8B%E4%BB%B6%E5%86%92%E6%B3%A1/20201123155129919.png"></p><p>分析：</p><p>因为box2在box1里面，所以点击box2时，也同时点击了box1，这就是<strong>事件冒泡</strong></p><h3 id="是从最具体的元素到不具体的元素（由内到外）"><a href="#是从最具体的元素到不具体的元素（由内到外）" class="headerlink" title="是从最具体的元素到不具体的元素（由内到外）"></a><strong>是从最具体的元素到不具体的元素（由内到外）</strong></h3><p><strong>当子元素（事件源）事件触发，事件会沿着包含关系，依次往上级传递，每一级都可以感知到事件，直到触发根元素（根源)</strong></p><p>上面例子的结果显然不是我们想要的， 我们希望的是点谁就显示谁，这时我们可以通过终止事件冒泡来得到我们想要的结果。</p><h3 id="终止事件冒泡"><a href="#终止事件冒泡" class="headerlink" title="终止事件冒泡"></a>终止事件冒泡</h3><h5 id="方法一：在相应的函数中加上event-stopPropagation"><a href="#方法一：在相应的函数中加上event-stopPropagation" class="headerlink" title="方法一：在相应的函数中加上event.stopPropagation()"></a><strong>方法一：在相应的函数中加上event.stopPropagation()</strong></h5><h5 id="方法二：判断event-target-和-event-currentTarget是否相等"><a href="#方法二：判断event-target-和-event-currentTarget是否相等" class="headerlink" title="方法二：判断event.target 和 event.currentTarget是否相等"></a><strong>方法二：判断event.target 和 event.currentTarget是否相等</strong></h5><p>event.target：指真正触发事件的元素</p><p>event.currentTarget：指绑定了事件监听的元素（触发事件元素的父级元素）</p><p>这时判断两者相等，则执行相应的处理函数；当事件冒泡到上一级时，event.currentTarget变成 了上一级元素，这时候判断二者不相等，则就不作响应处理逻辑。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>redux异步流程</title>
+      <link href="/2018/07/06/redux%E5%BC%82%E6%AD%A5%E6%B5%81%E7%A8%8B/"/>
+      <url>/2018/07/06/redux%E5%BC%82%E6%AD%A5%E6%B5%81%E7%A8%8B/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/2018/07/06/redux%E5%BC%82%E6%AD%A5%E6%B5%81%E7%A8%8B/20210427115241.png"></p><ul><li>首先发起一个action，然后通过中间件，这里为什么要使用中间件呢，因为dispatch的返回值才能是一个函数</li><li>通过store.dispatch，将状态的改变传给store的小弟reducer，reducer根据action的改变，传递新的状态state</li><li>最后将所有的改变告诉store，storeb保存着所有的数据，并将数据注入到组件的顶部，这样组件就可以获得他需要的数据了</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> redux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> redux </tag>
             
         </tags>
       
@@ -368,12 +518,43 @@
     
     
     <entry>
+      <title>v-for和v-if</title>
+      <link href="/2018/05/05/v-for%E5%92%8Cv-if/"/>
+      <url>/2018/05/05/v-for%E5%92%8Cv-if/</url>
+      
+        <content type="html"><![CDATA[<h3 id="为什么vue中的v-for和v-if不建议在一起使用？"><a href="#为什么vue中的v-for和v-if不建议在一起使用？" class="headerlink" title="为什么vue中的v-for和v-if不建议在一起使用？"></a>为什么vue中的v-for和v-if不建议在一起使用？</h3><h4 id="作用？"><a href="#作用？" class="headerlink" title="作用？"></a>作用？</h4><p>v-if指令用于条件性的渲染一块内容，这块内容只会在指令的表达式返回true值的时候被渲染</p><p>v-for指令基于一个数组来渲染一个列表，v-for指令需要使用item in items形式的特殊语法，其中items是元数据数组或者对象，而item则是被迭代的数组元素的别名</p><p>在v-for的时候建议设置key值，并保证每个key值是独一无二的，便于diff算法进行优化</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="title class_">Modal</span> v-<span class="keyword">if</span>=<span class="string">&quot;isShow&quot;</span> /&gt;</span><br><span class="line"></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    &#123;&#123; item.label &#125;&#125;</span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span></span><br></pre></td></tr></table></figure><h4 id="优先级？"><a href="#优先级？" class="headerlink" title="优先级？"></a>优先级？</h4><p>v-for的优先级高于v-if<br><strong>如果同时出现，每次渲染都会先执行循环再判断条件，无论如何循环都不可避免，浪费了性能</strong></p><h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><ol><li><p>永远不要把 <code>v-if</code> 和 <code>v-for</code> 同时用在同一个元素上，带来性能方面的浪费（每次渲染都会先循环再进行条件判断）</p></li><li><p>如果避免出现这种情况，则在外层嵌套<code>template</code>（页面渲染不生成<code>dom</code>节点），在这一层进行v-if判断，然后在内部进行v-for循环</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;template v-<span class="keyword">if</span>=<span class="string">&quot;isShow&quot;</span>&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">p</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br></pre></td></tr></table></figure></li><li><p>如果条件出现在循环内部，可通过计算属性<code>computed</code>提前过滤掉那些不需要显示的项&#96;</p></li></ol><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">computed</span>: &#123;</span><br><span class="line">    <span class="attr">items</span>: <span class="keyword">function</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="variable language_">this</span>.<span class="property">list</span>.<span class="title function_">filter</span>(<span class="keyword">function</span> (<span class="params">item</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> item.<span class="property">isShow</span></span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>react_setstate</title>
       <link href="/2018/05/04/react-setstate/"/>
       <url>/2018/05/04/react-setstate/</url>
       
         <content type="html"><![CDATA[<p>react通过管理状态实现对组件的管理，通过this.setState()的方法更新state,当this.setState()被调用的时候，react会重新调用render方法来重新渲染UI.</p><h4 id="调和阶段setState内部干了什么？"><a href="#调和阶段setState内部干了什么？" class="headerlink" title="调和阶段setState内部干了什么？"></a>调和阶段setState内部干了什么？</h4><ul><li>当调用setState时，react会做的第一件事情是将传递给setState的对象合并到组件的当前状态</li><li>这将启动一个成为和解的过程，和解的最终目标是以最有效的方式，根据这个新的状态来更新UI。为此，react将构建一个新的react元素树（您可以将其视为UI的对象表示）</li><li>一旦有了这个树，为了弄清UI如何响应新的状态而改变，react会将这个新树与上一个元素树相比较（diff）</li></ul><p>通过这样做，react将会知道发生的确切变化，并且通过了解发生什么变化，只需要在绝对必要情况下进行更新即可最小化UI的占用空间</p><ol><li>setState<strong>只有在react自身的合成事件和钩子函数中时异步的，在原生事件和setTimeout中是同步的</strong></li><li>setState的异步并不是说内部由异步代码实现，其实本身执行的过程和代码都是同步的，只是合成时间和钩子函数中没法立马拿到更新后的值，形成了所谓的异步。当然可以通过setState的第二个参数中的callback拿到更新后的结果</li><li>s<strong>etState的批量更新优化也是建立在异步之上的</strong>，在原生事件和setTimeout中不会批量更新，在异步中如果对同一个值进行多次setState，setState的批量更新策略会对其进行覆盖，去最后一次的执行，如果是同时setState多个不同的值，在更新时会对其进行合并批量更新。</li></ol><p><img src="/2018/05/04/react-setstate/20210409153900.png"></p><p><code>setState</code>是可以接受两个参数的，一个<code>state</code>，一个回调函数。因此我们可以在回调函数里面获取值</p><h4 id="setState原理分析"><a href="#setState原理分析" class="headerlink" title="setState原理分析"></a>setState原理分析</h4><ul><li>setState方法通过一个<strong>队列机制实现state更新</strong>，当执行setState的时候，会将需要更新的state合并之后放入<strong>状态队列</strong>，而不会立即更新this.state</li><li>如果我们不使用setState而是使用this.state.key来修改，将不会触发组件的re-render</li><li>如果将this.state赋值给一个新的对象引用，那么其他不在对象上的state将不会放入状态队列，当下次调用setState并对状态队列进行合并时，直接造成了state丢失</li></ul>]]></content>
       
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
       
       
         <tags>
@@ -456,6 +637,31 @@
       
         <content type="html"><![CDATA[<h3 id="什么是vue路由？"><a href="#什么是vue路由？" class="headerlink" title="什么是vue路由？"></a>什么是vue<strong>路由？</strong></h3><p>“Vue路由就是指vue-router,其中router是指根据url分配到对应的处理程序,所以说路由就是用来解析 </p><p>URL以及调用对应的控制器并返回从视图对象中提取好的网页代码给web服务器,最终返回给客户端。</p><h3 id="vue路由的优点以及缺点是什么？"><a href="#vue路由的优点以及缺点是什么？" class="headerlink" title="vue路由的优点以及缺点是什么？"></a>vue路由的优点以及缺点是什么？</h3><p>优点：</p><p>​不需要每次都从服务器获取，渲染页面更快速</p><p>缺点：</p><p>​不利于SEO</p><p>​使用浏览器前进、后退按键时重新发起请求，未合理利用缓存</p><p>​单页面无法记住之前滚动的位置</p><h3 id="vue-router实现原理？"><a href="#vue-router实现原理？" class="headerlink" title="vue-router实现原理？"></a>vue-router实现原理？</h3><p>路由模式：</p><ul><li>hash模式</li><li>history模式</li></ul><h4 id="hash模式："><a href="#hash模式：" class="headerlink" title="hash模式："></a>hash模式：</h4><p>是以url中#后面的内容作为路由地址，可以直接通过location.url来切换浏览器的地址，如果改变了#后面的内容，浏览器不会向服务器请求这个地址，但是会把这个地址记录在浏览器的访问记录中，当hash改变后，要监听hash的变化，并做相应的处理，我们可以监听hashchange事件，当hash发生变化时，会触发hashchange事件，在hashchange事件中记录当前路由地址，并找到当前路由对应的组件，重新渲染在浏览器中。</p><p>实现前端路由：更新视图但不重新请求页面</p><h4 id="history模式："><a href="#history模式：" class="headerlink" title="history模式："></a>history模式：</h4><p>利用HTML5 History Interface中新增的pushState()和repalce()方法</p><p>当调用他们修改浏览器历史记录栈后，虽然当前url改变了，但浏览器不会刷新页面，这就是为单页应用前端路由更新视图，但不重新请求页面提供了基础。</p><h4 id="怎么定义-vue-router-的动态路由-如何获取动态路由传过来的值？"><a href="#怎么定义-vue-router-的动态路由-如何获取动态路由传过来的值？" class="headerlink" title="怎么定义 vue-router 的动态路由**?**如何获取动态路由传过来的值？"></a><strong>怎么定义</strong> <strong>vue-router</strong> <strong>的动态路由</strong>**?**<strong>如何获取动态路由传过来的值？</strong></h4><p>定义动态路由：</p><p>​在 router 目录下的 index.js 文件中，对 path 属性加上 &#x2F;:id。</p><p>获取动态路由传过来的值:</p><p>​使用 router 对象的 params.id 获取</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//全局获取动态路由传递过来的值 </span></span><br><span class="line"></span><br><span class="line">$route.<span class="property">params</span>.<span class="property">id</span> </span><br><span class="line"></span><br><span class="line"><span class="comment">//局部或者是在方法内获取 </span></span><br><span class="line"></span><br><span class="line"><span class="variable language_">this</span>.<span class="property">$route</span>.<span class="property">params</span>.<span class="property">id</span></span><br></pre></td></tr></table></figure>]]></content>
       
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>v-show和v-if</title>
+      <link href="/2018/04/28/v-show%E5%92%8Cv-if/"/>
+      <url>/2018/04/28/v-show%E5%92%8Cv-if/</url>
+      
+        <content type="html"><![CDATA[<h3 id="vue中的v-if和v-show怎么理解？"><a href="#vue中的v-if和v-show怎么理解？" class="headerlink" title="vue中的v-if和v-show怎么理解？"></a>vue中的v-if和v-show怎么理解？</h3><h4 id="v-if和v-show的共同点？"><a href="#v-if和v-show的共同点？" class="headerlink" title="v-if和v-show的共同点？"></a>v-if和v-show的共同点？</h4><p>我们都知道在 <code>vue</code> 中 <code>v-show</code> 与 <code>v-if</code> 的作用效果是相同的(不含v-else)，<strong>都能控制元素在页面是否显示</strong></p><p>在用法上也相同</p><ul><li>当表达式为true的时候，都会占据页面的位置</li><li>当表达式都为false时，都不会占据页面的位置</li></ul><h4 id="v-if和v-show的不同点？"><a href="#v-if和v-show的不同点？" class="headerlink" title="v-if和v-show的不同点？"></a>v-if和v-show的不同点？</h4><p>控制手段不同：</p><ul><li>v-show隐藏则是为该元素添加css–display:none,dom元素依旧还在。</li><li>v-if显示隐藏是将dom元素整个添加或删除</li></ul><p>编译过程：</p><ul><li>v-if切换有一个局部编译&#x2F;卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件</li><li>v-show只是简单的基于css切换</li></ul><p>编译条件：</p><ul><li>v-if是真正的条件渲染，他会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁重建，只有渲染条件为假时，并不做操作，直到为真才渲染。</li><li>v-show有false变为true的时候不会触发组件的生命周期</li><li>v-if由false变为true的时候，触发组件的beforeCreate,create,beforeMount,mounted钩子，由true变为false的时候触发组件的beforeDestory,destoryed方法。</li></ul><p>性能消耗：</p><ul><li>v-if有更高的切换消耗，</li><li>v-show有更高的初始渲染消耗</li></ul><h3 id="v-show与v-if的使用场景"><a href="#v-show与v-if的使用场景" class="headerlink" title="v-show与v-if的使用场景"></a>v-show与v-if的使用场景</h3><p><code>v-if</code> 与 <code>v-show</code> 都能控制<code>dom</code>元素在页面的显示</p><p><code>v-if</code> 相比 <code>v-show</code> 开销更大的（直接操作<code>dom</code>节点增加与删除）</p><p>如果需要非常频繁地切换，则使用 v-show 较好</p><p>如果在运行时条件很少改变，则使用 v-if </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
       
       
         <tags>
