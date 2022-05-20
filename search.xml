@@ -4,11 +4,186 @@
   
     
     <entry>
+      <title>正向代理和反向代理</title>
+      <link href="/2022/05/20/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/"/>
+      <url>/2022/05/20/%E6%AD%A3%E5%90%91%E4%BB%A3%E7%90%86%E5%92%8C%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/</url>
+      
+        <content type="html"><![CDATA[<h3 id="正向代理"><a href="#正向代理" class="headerlink" title="正向代理"></a>正向代理</h3><p>我么们常说的代理就是正向代理，正向代理的过程，他隐藏了真实的请求客户端，服务端不知道真实的客户端是谁，客户端请求的服务都被代理服务器代替来请求。</p><h3 id="反向代理"><a href="#反向代理" class="headerlink" title="反向代理"></a>反向代理</h3><p>这种代理的模式下，他隐藏了真实的服务端，当我们向一个网站发起请求的时候，背后可能由成千上万台服务器，具体是哪一台，我们不清楚，我们只需要知道反向代理服务器是谁就行，而且反向代理服务器会帮我们把请求转发到真实的服务器那里去，一般而言反向代理服务器一般用来实现负载平衡。</p><p>负载平衡的两种实现方式？</p><ul><li>一种是使用反向代理的方式，用户请求都发送到反向代理服务器上，然后由反向代理服务器来转发请求到真实的服务器上，以此来实现集群的负载平衡</li><li>另一种是DNS的方式，DNS可以用于在冗余的服务器上实现负载平衡，因为现在一般的大型网站使用多台服务器提供服务，因此一个域名可能会对应多个服务器地址，当用户向网站域名请求的时候，DNS服务器返回这个域名所对应得服务器IP地址的集合，但在每个回答中，会循环这些IP地址的顺序，用户一般会选择排在前面的地址发送请求。以此将用户的请求均衡的分配到各个不同的服务器上，这样来实现负载均衡。这个方式有一个缺点就是，由于DNS服务器中存在缓存，所以有可能一个服务器出现故障后，域名解析仍然返回的是那个IP地址，就会造成访问的问题。</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>短轮询h长轮询和websocket区别</title>
+      <link href="/2022/05/20/%E7%9F%AD%E8%BD%AE%E8%AF%A2h%E9%95%BF%E8%BD%AE%E8%AF%A2%E5%92%8Cwebsocket%E5%8C%BA%E5%88%AB/"/>
+      <url>/2022/05/20/%E7%9F%AD%E8%BD%AE%E8%AF%A2h%E9%95%BF%E8%BD%AE%E8%AF%A2%E5%92%8Cwebsocket%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h3 id="短轮询："><a href="#短轮询：" class="headerlink" title="短轮询："></a>短轮询：</h3><p>短轮询的基本思路：</p><ol><li>浏览器每隔一段时间向浏览器发送http请求，服务器端在收到请求后，不论是否有数据更新，都直接进行响应</li><li>这种方式实现的即时通信，本质上还是浏览器发送请求，服务器接受请求的一个过程，通过让客户端不断地进行请求，是的客户端能够模拟实时地收到服务器端地数据地变化</li></ol><p>优缺点：</p><ul><li>优点：比较简单，易于理解</li><li>缺点：这种方式由于需要不断地建立http链接，严重浪费了服务器端和客户端地资源，当用户增加地时候，服务器地压力就会变大，这是很不合理的。</li></ul><h3 id="长轮询："><a href="#长轮询：" class="headerlink" title="长轮询："></a>长轮询：</h3><p>长轮询的基本思路：</p><ol><li>首先由客户端向服务器发起请求，当服务器收到客户端发来的请求后，服务器端不会直接响应，而是先将这个请求挂起，然后判断服务器端数据是否有更新</li><li>如果有更新，则会进行响应，重新建立连接</li></ol><p>优缺点：</p><ul><li>长轮询和短轮询比起来，他的有点事明显减少了很多不必要的http请求次数，节约了资源</li><li>长轮询的缺点在于，连接挂起也会导致资源的浪费</li></ul><h3 id="websocket"><a href="#websocket" class="headerlink" title="websocket"></a>websocket</h3><p>websocket是HTML5定义的一个新协议，与传统的http协议不同，该协议允许由服务器主动的向客户端推送信息</p><p>使用websocket协议的缺点就是在服务器端的配置比较复杂，websocket是一个全双工的协议，也就是通信双方是平等的，可以互相发送消息。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> JavaScript </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>get和post的区别</title>
+      <link href="/2022/05/18/get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
+      <url>/2022/05/18/get%E5%92%8Cpost%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
+      
+        <content type="html"><![CDATA[<h3 id="get和post的区别？"><a href="#get和post的区别？" class="headerlink" title="get和post的区别？"></a>get和post的区别？</h3><p>GET用于获取资源，POST用于提交资源。</p><p>从缓存角度：get请求后浏览器会自动缓存，post默认情况下不能</p><p>从参数角度来看：get请求一般放在URL中，因此不安全，POST请求放在请求体中，相对比较安全，但是在抓包的情况下都是一样的</p><p>从编码的角度：GET请求智能经行URL编码，只能接受ASCII码，而POST支持更多的编码类型且不对数据类型限值</p><p>GET请求会一次性发送请求报文，POST请求通常分为两个TCP数据包，首先发header部分，如果服务器响应100,然后发body部分。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> http </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> http </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>浏览器架构</title>
+      <link href="/2022/05/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84/"/>
+      <url>/2022/05/13/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84/</url>
+      
+        <content type="html"><![CDATA[<p>单进程浏览器时代</p><p>单进程浏览器是指浏览器的所有功能模块都是运行在同一进程里，这些模块包含了网络，插件，JavaScript运行环境，渲染引擎和页面等。</p><p>其实早在2007年之前，市面上浏览器都是单进程的</p><p>缺点：</p><p>不稳定：一个插件的意外崩溃会引起整个浏览器的崩溃</p><p>不流畅：所有页面的渲染模块，JavaScript执行环境以及插件都是运行在同一个线程中的，这就意味着同一时刻只能有一个模块可以执行</p><p>不安全：可以通过浏览器的漏洞来获取系统权限，这些脚本获取系统权限之后也可以对你的电脑做一些恶意的事情，同样也会引发安全问题</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 浏览器 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 浏览器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react-Hooks</title>
+      <link href="/2022/05/10/react-Hooks/"/>
+      <url>/2022/05/10/react-Hooks/</url>
+      
+        <content type="html"><![CDATA[<ul><li>代码逻辑聚合，逻辑复用</li><li>HOC嵌套地狱</li><li>代替class</li></ul><h3 id="函数组件与类组件的对比：无关“优劣”，只谈“不同”"><a href="#函数组件与类组件的对比：无关“优劣”，只谈“不同”" class="headerlink" title="函数组件与类组件的对比：无关“优劣”，只谈“不同”"></a><strong>函数组件与类组件的对比：无关“优劣”，只谈“不同”</strong></h3><p>类组件需要继承class,函数组件不需要</p><p>类组件可以访问生命周期，函数组件不能</p><p>类组件中可以获取到实例化后的this，并基于这个this做各种各样的事情，而函数组件不可以</p><p>类组件可以定义斌能够维护state,函数组件不可以</p><h3 id="react-hooks的好处？"><a href="#react-hooks的好处？" class="headerlink" title="react hooks的好处？"></a>react hooks的好处？</h3><ol><li>跨组件复用: 其实 render props &#x2F; HOC 也是为了复用，相比于它们，Hooks 作为官方的底层 API，最为轻量，而且改造成本小，不会影响原来的组件层次结构和传说中的嵌套地狱；</li><li>类定义更为复杂</li></ol><ul><li>不同的生命周期会使逻辑变得分散且混乱，不易维护和管理；</li><li>时刻需要关注this的指向问题；</li><li>代码复用代价高，高阶组件的使用经常会使整个组件树变得臃肿；</li></ul><p>3.状态与UI隔离: 正是由于 Hooks 的特性，状态逻辑会变成更小的粒度，并且极容易被抽象成一个自定义 Hooks，组件中的状态和 UI 变得更为清晰和隔离。</p><p><strong>注意:</strong></p><ul><li>避免在 循环&#x2F;条件判断&#x2F;嵌套函数 中调用 hooks，保证调用顺序的稳定；</li><li>只有 函数定义组件 和 hooks 可以调用 hooks，避免在 类组件 或者 普通函数 中调用；</li><li>不能在useEffect中使用useState，React 会报错提示；</li><li>类组件不会被替换或废弃，不需要强制改造类组件，两种方式能并存；</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react-jsx语法糖本质</title>
+      <link href="/2022/05/09/react-jsx%E8%AF%AD%E6%B3%95%E7%B3%96%E6%9C%AC%E8%B4%A8/"/>
+      <url>/2022/05/09/react-jsx%E8%AF%AD%E6%B3%95%E7%B3%96%E6%9C%AC%E8%B4%A8/</url>
+      
+        <content type="html"><![CDATA[<p>jsx是语法糖，通过babel转成Recact.createElement函数，</p><p>JSX 是一个 <code>JavaScript</code> 的语法扩展，结构类似 XML。</p><ul><li>首先解析出来得话，就是一个crreateElement函数</li><li>通过这个函数执行完后，会返回一个vnode</li><li>通过vnode的patch或者其他的一个方法，最后渲染成一个页面</li></ul><p>JSX 主要用于声明 <code>React</code> 元素，但 React 中并不强制使用 <code>JSX</code>。即使使用了 <code>JSX</code>，也会在构建过程中，通过 Babel 插件编译为 <code>React.createElement</code>。所以 JSX 更像是 <code>React.createElement</code> 的一种语法糖</p><p>react通过babel把JSX转成<code>createElement</code>函数，生成<code>ReactElement</code>对象，然后通过<code>ReactDOM.render函</code>数把<code>ReactElement</code>渲染成真实的<code>DOM</code>元素</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>slot插槽</title>
       <link href="/2022/01/18/slot%E6%8F%92%E6%A7%BD/"/>
       <url>/2022/01/18/slot%E6%8F%92%E6%A7%BD/</url>
       
         <content type="html"><![CDATA[<h3 id="什么是slot"><a href="#什么是slot" class="headerlink" title="什么是slot?"></a>什么是slot?</h3><p>在HTML中 <code>slot</code> 元素 ，作为 <code>Web Components</code> 技术套件的一部分，是Web组件内的一个占位符</p><p>该占位符可以在后期使用自己的标记语言填充</p><p>slot一名插槽，花名“占坑”，我们可以理解为solt在组件模板中占好了位置</p><p>，当使用该组件标签的时候，组件标签里面的内容就会自动填坑（替换组件模板中slot位置），作为承载分发内容的出口。</p><h3 id="使用场景？"><a href="#使用场景？" class="headerlink" title="使用场景？"></a>使用场景？</h3><p>使用插槽可以让用户可以拓展组件，去更好的复用组件对其做定制化处理。</p><p>如果父组件在使用到一个复用组件的时候，获取这个组件在不同的地方有少量的更改，如果去重写组件是一件不明智的事情。</p><p>通过slot插槽向组件内部指定位置传递内容，完成这个复用组件在不同场景的应用。</p><p>比如布局组件、表格列、下拉选项、弹框显示内容</p><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h5 id="默认插槽"><a href="#默认插槽" class="headerlink" title="默认插槽"></a>默认插槽</h5><p>子组件用<code>&lt;slot&gt;</code>标签来确定渲染的位置，标签里面可以放<code>DOM</code>结构，当父组件使用的时候没有往插槽传入内容，标签内<code>DOM</code>结构就会显示在页面</p><p>父组件在使用的时候，直接在子组件的标签内写入内容即可</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">子组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">slot</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      <span class="tag">&lt;<span class="name">p</span>&gt;</span>插槽后备的内容<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">父组件</span><br><span class="line">&lt;<span class="title class_">Child</span>&gt;</span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">div</span>&gt;</span>默认插槽<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>  </span><br><span class="line">&lt;/<span class="title class_">Child</span>&gt;</span><br></pre></td></tr></table></figure><h5 id="具名插槽"><a href="#具名插槽" class="headerlink" title="具名插槽"></a>具名插槽</h5><p>子组件用<code>name</code>属性来表示插槽的名字，不传为默认插槽</p><p>父组件中在使用时在默认插槽的基础上加上<code>slot</code>属性，值为子组件插槽<code>name</code>属性值</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">子组件</span><br><span class="line">&lt;template&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">slot</span>&gt;</span>插槽后备的内容<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;content&quot;</span>&gt;</span>插槽后备的内容<span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">父组件</span><br><span class="line">&lt;child&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:default</span>&gt;</span>具名插槽<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">    &lt;!-- 具名插槽⽤插槽名做参数 --&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:content</span>&gt;</span>内容...<span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">&lt;/child&gt;</span><br><span class="line"></span><br></pre></td></tr></table></figure><h5 id="作用域插槽"><a href="#作用域插槽" class="headerlink" title="作用域插槽"></a>作用域插槽</h5><p>子组件在作用域上绑定属性来将子组件的信息传给父组件使用，这些属性会被挂在父组件<code>v-slot</code>接受的对象上</p><p>父组件中在使用时通过<code>v-slot:</code>（简写：#）获取子组件的信息，在内容中使用</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">子组件</span><br><span class="line">&lt;template&gt; </span><br><span class="line">  <span class="language-xml"><span class="tag">&lt;<span class="name">slot</span> <span class="attr">name</span>=<span class="string">&quot;footer&quot;</span> <span class="attr">testProps</span>=<span class="string">&quot;子组件的值&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">          <span class="tag">&lt;<span class="name">h3</span>&gt;</span>没传footer插槽<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">slot</span>&gt;</span></span></span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">父组件</span><br><span class="line">&lt;child&gt; </span><br><span class="line">    &lt;!-- 把v-slot的值指定为作⽤域上下⽂对象 --&gt;</span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">template</span> <span class="attr">v-slot:default</span>=<span class="string">&quot;slotProps&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      来⾃⼦组件数据：&#123;&#123;slotProps.testProps&#125;&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">    <span class="language-xml"><span class="tag">&lt;<span class="name">template</span> #<span class="attr">default</span>=<span class="string">&quot;slotProps&quot;</span>&gt;</span></span></span><br><span class="line"><span class="language-xml">      来⾃⼦组件数据：&#123;&#123;slotProps.testProps&#125;&#125;</span></span><br><span class="line"><span class="language-xml">    <span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line">&lt;/child&gt;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> vue </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> vue </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>vue3做了那些优化？</title>
+      <link href="/2021/05/18/vue3%E5%81%9A%E4%BA%86%E9%82%A3%E4%BA%9B%E4%BC%98%E5%8C%96%EF%BC%9F/"/>
+      <url>/2021/05/18/vue3%E5%81%9A%E4%BA%86%E9%82%A3%E4%BA%9B%E4%BC%98%E5%8C%96%EF%BC%9F/</url>
+      
+        <content type="html"><![CDATA[<p>1：重构响应式系统，使用proxy替换Object.defineProperty</p><ul><li>proxy优势：可以直接监听数组类型的数据变化</li><li>监听的目标为对象本身，不需要像object.definepproperty一样遍历每个属性，有一定的性能提升</li><li>可以拦截apply,ownKeys等13种方法，而Object.defineProperty不行</li><li>直接实现对象属性的新增和 删除</li></ul><p>2：新增Composition API（组合式API），更好的逻辑复用和代码组织</p><p>3：重构虚拟dom</p><ul><li>模板编译时的优化，将一些静态节点编译成常量</li><li>slot优化，将slot编译为lazy函数，将slot的渲染的决定交给子组件</li><li>模板中内联事件的提取并重用</li></ul><p>4：代码结构调整，更便于Tree shaking,使体积变得更小</p><p>5：使用typescript替换Flow</p>]]></content>
       
       
       <categories>
@@ -510,6 +685,31 @@
         <tags>
             
             <tag> webpack </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>react-router</title>
+      <link href="/2018/05/13/react-router/"/>
+      <url>/2018/05/13/react-router/</url>
+      
+        <content type="html"><![CDATA[<h3 id="React-Router-的实现原理及工作方式分别是什么"><a href="#React-Router-的实现原理及工作方式分别是什么" class="headerlink" title="React-Router 的实现原理及工作方式分别是什么"></a>React-Router 的实现原理及工作方式分别是什么</h3><ul><li>React Router<code> 路由的基础实现原理分为两种，如果是</code>切换 Hash<code>的方式，那么依靠浏览器</code>Hash<code>变化即可；如果是切换网址中的</code>Path<code>，就要用到 </code>HTML5 History API<code>中的</code>pushState<code>、</code>replaceState<code>等。在使用这个方式时，还需要在服务端完成</code>historyApiFallback&#96; 配置</li><li>在 <code>React Router</code> 内部主要依靠 <code>history</code> 库完成，这是由 <code>React Router</code> 自己封装的库，为了实现跨平台运行的特性，内部提供两套基础 <code>history</code>，一套是直接使用浏览器的 <code>History API</code>，用于支持 <code>react-router-dom</code>；另一套是基于内存实现的版本，这是自己做的一个数组，用于支持 <code>react-router-native</code>。</li><li><code>React Router</code> 的工作方式可以分为设计模式与关键模块两个部分。从设计模式的角度出发，在架构上通过 <code>Monorepo</code>进行库的管理。<code>Monorepo</code> 具有团队间透明、迭代便利的优点。其次在整体的数据通信上使用了 Context API 完成上下文传递。</li><li>在关键模块上，主要分为三类组件：<code>第一类是 Context 容器</code>，比如 Router 与 MemoryRouter；<code>第二类是消费者组件，用以匹配路由</code>，主要有 Route、Redirect、Switch 等；<code>第三类是与平台关联的功能组件</code>，比如 <code>Link、NavLink、DeepLinking</code> 等。</li></ul><p><img src="/2018/05/13/react-router/20210425214114.png"></p><p><img src="/2018/05/13/react-router/20210409164620.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> react </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> react </tag>
             
         </tags>
       
