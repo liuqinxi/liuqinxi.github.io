@@ -1,0 +1,206 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？ | QinxiBlog</title><meta name="keywords" content="vue"><meta name="author" content="QinxiBlog"><meta name="copyright" content="QinxiBlog"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="一：权限是什么权限是对特定资源的访问许可，所谓权限控制，也就是确保用户只能访问到被分配的资源 而前端权限归根结底是请求的发起权，请求的发起可能有下面两种形式触发  页面加载触发 页面上的按钮点击触发  总的来说，所有的请求发起的触发自前端路由或视图 所以我们可以从两方面入手，对触发权限的源头进行控制，最终实现的目标是：  路由方面，用户登录后只能看到自己有权访问的导航菜单也只能访问自己有权访问的路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？">
+<meta property="og:url" content="http://example.com/2022/05/29/vuez%E8%A6%81%E5%81%9A%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%88%B0%E6%8C%89%E9%92%AE%E7%BA%A7%E5%88%AB%E7%9A%84%E6%9D%83%E9%99%90%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F/index.html">
+<meta property="og:site_name" content="QinxiBlog">
+<meta property="og:description" content="一：权限是什么权限是对特定资源的访问许可，所谓权限控制，也就是确保用户只能访问到被分配的资源 而前端权限归根结底是请求的发起权，请求的发起可能有下面两种形式触发  页面加载触发 页面上的按钮点击触发  总的来说，所有的请求发起的触发自前端路由或视图 所以我们可以从两方面入手，对触发权限的源头进行控制，最终实现的目标是：  路由方面，用户登录后只能看到自己有权访问的导航菜单也只能访问自己有权访问的路">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/yu3.jpg">
+<meta property="article:published_time" content="2022-05-29T12:40:45.000Z">
+<meta property="article:modified_time" content="2022-05-29T14:34:44.046Z">
+<meta property="article:author" content="QinxiBlog">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/yu3.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/05/29/vuez%E8%A6%81%E5%81%9A%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%88%B0%E6%8C%89%E9%92%AE%E7%BA%A7%E5%88%AB%E7%9A%84%E6%9D%83%E9%99%90%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-29 22:34:44'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/123.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/yu3.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">QinxiBlog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-29T12:40:45.000Z" title="发表于 2022-05-29 20:40:45">2022-05-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-29T14:34:44.046Z" title="更新于 2022-05-29 22:34:44">2022-05-29</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/vue/">vue</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="一：权限是什么"><a href="#一：权限是什么" class="headerlink" title="一：权限是什么"></a>一：权限是什么</h3><p>权限是对特定资源的访问许可，所谓权限控制，也就是确保用户只能访问到被分配的资源</p>
+<p>而前端权限归根结底是请求的发起权，请求的发起可能有下面两种形式触发</p>
+<ul>
+<li>页面加载触发</li>
+<li>页面上的按钮点击触发</li>
+</ul>
+<p>总的来说，所有的请求发起的触发自前端路由或视图</p>
+<p>所以我们可以从两方面入手，对触发权限的源头进行控制，最终实现的目标是：</p>
+<ul>
+<li>路由方面，用户登录后只能看到自己有权访问的导航菜单也只能访问自己有权访问的路由地址，否则将跳转4xx提示页</li>
+<li>视图方面，用户只能看到自己有权浏览的内容和有权操作的控件</li>
+<li>最后再加上请求控制作为最后一道防线，路由可能配置失误，按钮可能忘了加权限，这种时候请求控制可以用来兜底，越权请求将在前端被拦截</li>
+</ul>
+<h3 id="如何做"><a href="#如何做" class="headerlink" title="如何做"></a>如何做</h3><p>前端权限控制可以分为四个方面：</p>
+<ul>
+<li>接口权限</li>
+<li>按钮权限</li>
+<li>菜单权限</li>
+<li>路由权限</li>
+</ul>
+<h4 id="接口权限"><a href="#接口权限" class="headerlink" title="接口权限"></a>接口权限</h4><p>接口权限目前一般采用jwt的形式来验证，没有通过的话一般返回401，跳转到登录页面重新进行登录</p>
+<p>登录完拿到token，将token存起来，通过axios请求拦截器进行拦截，每次请求的时候头部携带token</p>
+<h4 id="路由权限控制"><a href="#路由权限控制" class="headerlink" title="路由权限控制"></a>路由权限控制</h4><p><strong>方案一</strong></p>
+<p>初始化即挂载全部路由，并且在路由上标记相应的权限信息，每次路由跳转前做校验</p>
+<p>这种方式存在以下缺点：</p>
+<ul>
+<li>加载所有的路由，如果路由很多，而用户并不是所有的路由都有权限访问，对性能会有影响。</li>
+<li>全局路由守卫里，每次路由跳转都要做权限判断</li>
+<li>菜单信息写死在前端，要改个显示文字或权限信息，需要重新编译</li>
+<li>菜单跟路由耦合在一起，定义路由的时候还有添加菜单显示标题，图标之类的信息，而且路由不一定作为菜单显示，还要多加字段进行标识。</li>
+</ul>
+<p><strong>方案二</strong></p>
+<p>初始化的时候先挂载不需要权限控制的路由，比如登录页，404等错误页，如果用户通过URL进行强制访问，则会直接进入404，相当于从源头上做了控制</p>
+<p>登录后，获取用户的权限信息，仍然会筛选有权限访问的路由，在全局路由守卫里进行调用addRoutes添加路由。</p>
+<h4 id="菜单权限"><a href="#菜单权限" class="headerlink" title="菜单权限"></a>菜单权限</h4><p>菜单权限可以理解成将页面与理由进行解耦</p>
+<p><strong>方案一</strong></p>
+<p>菜单与路由分离，菜单由后端返回</p>
+<p>前端定义路由信息</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">name</span>: <span class="string">&quot;login&quot;</span>,</span><br><span class="line">    <span class="attr">path</span>: <span class="string">&quot;/login&quot;</span>,</span><br><span class="line">    <span class="attr">component</span>: <span class="function">() =&gt;</span> <span class="title function_">import</span>(<span class="string">&quot;@/pages/Login.vue&quot;</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>name字段都不为空，需要根据此字段与后端返回菜单做关联，后端返回的菜单信息中必须要由name对应的字段，并且做唯一性校验</p>
+<p><strong>方案二</strong></p>
+<p>菜单和路由都由后端返回</p>
+<p>前端统一定义路由组件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="title function_">Home</span> = (<span class="params"></span>) =&gt; <span class="title function_">import</span>(<span class="string">&quot;../pages/Home.vue&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> <span class="title function_">UserInfo</span> = (<span class="params"></span>) =&gt; <span class="title function_">import</span>(<span class="string">&quot;../pages/UserInfo.vue&quot;</span>);</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    <span class="attr">home</span>: <span class="title class_">Home</span>,</span><br><span class="line">    <span class="attr">userInfo</span>: <span class="title class_">UserInfo</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>后端路由组件返回以下格式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;home&quot;</span>,</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;/&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>: <span class="string">&quot;home&quot;</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;home&quot;</span>,</span><br><span class="line">        <span class="attr">path</span>: <span class="string">&quot;/userinfo&quot;</span>,</span><br><span class="line">        <span class="attr">component</span>: <span class="string">&quot;userInfo&quot;</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>在将后端返回路由通过<code>addRoutes</code>动态挂载之间，需要将数据处理一下，将<code>component</code>字段换为真正的组件</p>
+<p>如果有嵌套路由，后端功能设计的时候，要注意添加相应的字段，前端拿到数据也要做相应的处理</p>
+<p>这种方法也会存在缺点：</p>
+<ul>
+<li>全局路由守卫里，每次路由跳转都要做判断</li>
+<li>前后端的配合要求更高</li>
+</ul>
+<h4 id="按钮权限"><a href="#按钮权限" class="headerlink" title="按钮权限"></a>按钮权限</h4><p> <strong>方案一</strong></p>
+<p>按钮权限也可以用<code>v-if</code>判断</p>
+<p>但是如果页面过多，每个页面页面都要获取用户权限<code>role</code>和路由表里的<code>meta.btnPermissions</code>，然后再做判断</p>
+<p><strong>方案二</strong></p>
+<p>通过自定义指令进行按钮权限的判断</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined">QinxiBlog</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/05/29/vuez%E8%A6%81%E5%81%9A%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%88%B0%E6%8C%89%E9%92%AE%E7%BA%A7%E5%88%AB%E7%9A%84%E6%9D%83%E9%99%90%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F/">http://example.com/2022/05/29/vuez%E8%A6%81%E5%81%9A%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%88%B0%E6%8C%89%E9%92%AE%E7%BA%A7%E5%88%AB%E7%9A%84%E6%9D%83%E9%99%90%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">QinxiBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/vue/">vue</a></div><div class="post_share"><div class="social-share" data-image="/img/yu3.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/05/28/react-JSX%E8%BD%AC%E6%8D%A2%E6%88%90%E7%9C%9F%E5%AE%9EDOM%E7%9A%84%E8%BF%87%E7%A8%8B/"><img class="next-cover" src="/img/yu3.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">react-JSX转换成真实DOM的过程</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/02/11/mvvm%E6%A1%86%E6%9E%B6/" title="mvvm框架"><img class="cover" src="/img/yu3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-02-11</div><div class="title">mvvm框架</div></div></a></div><div><a href="/2018/05/02/nextTick/" title="nextTick"><img class="cover" src="/img/yu3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-05-02</div><div class="title">nextTick</div></div></a></div><div><a href="/2022/01/18/slot%E6%8F%92%E6%A7%BD/" title="slot插槽"><img class="cover" src="/img/yu3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-01-18</div><div class="title">slot插槽</div></div></a></div><div><a href="/2018/05/05/v-for%E5%92%8Cv-if/" title="v-for和v-if"><img class="cover" src="/img/yu3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-05-05</div><div class="title">v-for和v-if</div></div></a></div><div><a href="/2018/04/28/v-show%E5%92%8Cv-if/" title="v-show和v-if"><img class="cover" src="/img/yu3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2018-04-28</div><div class="title">v-show和v-if</div></div></a></div><div><a href="/2021/05/18/vue3%E5%81%9A%E4%BA%86%E9%82%A3%E4%BA%9B%E4%BC%98%E5%8C%96%EF%BC%9F/" title="vue3做了那些优化？"><img class="cover" src="/img/yu3.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-05-18</div><div class="title">vue3做了那些优化？</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/123.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">QinxiBlog</div><div class="author-info__description"></div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">文章</div><div class="length-num">75</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">分类</div><div class="length-num">10</div></a></div></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E6%9D%83%E9%99%90%E6%98%AF%E4%BB%80%E4%B9%88"><span class="toc-number">1.</span> <span class="toc-text">一：权限是什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E5%81%9A"><span class="toc-number">2.</span> <span class="toc-text">如何做</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8E%A5%E5%8F%A3%E6%9D%83%E9%99%90"><span class="toc-number">2.1.</span> <span class="toc-text">接口权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"><span class="toc-number">2.2.</span> <span class="toc-text">路由权限控制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8F%9C%E5%8D%95%E6%9D%83%E9%99%90"><span class="toc-number">2.3.</span> <span class="toc-text">菜单权限</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E9%92%AE%E6%9D%83%E9%99%90"><span class="toc-number">2.4.</span> <span class="toc-text">按钮权限</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/05/29/vuez%E8%A6%81%E5%81%9A%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%88%B0%E6%8C%89%E9%92%AE%E7%BA%A7%E5%88%AB%E7%9A%84%E6%9D%83%E9%99%90%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F/" title="vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？"><img src="/img/yu3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？"/></a><div class="content"><a class="title" href="/2022/05/29/vuez%E8%A6%81%E5%81%9A%E7%9A%84%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86%E8%AF%A5%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%E5%A6%82%E6%9E%9C%E6%8E%A7%E5%88%B6%E5%88%B0%E6%8C%89%E9%92%AE%E7%BA%A7%E5%88%AB%E7%9A%84%E6%9D%83%E9%99%90%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F/" title="vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？">vue要做的权限管理该怎么做？如果控制到按钮级别的权限怎么做？</a><time datetime="2022-05-29T12:40:45.000Z" title="发表于 2022-05-29 20:40:45">2022-05-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/28/react-JSX%E8%BD%AC%E6%8D%A2%E6%88%90%E7%9C%9F%E5%AE%9EDOM%E7%9A%84%E8%BF%87%E7%A8%8B/" title="react-JSX转换成真实DOM的过程"><img src="/img/yu3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="react-JSX转换成真实DOM的过程"/></a><div class="content"><a class="title" href="/2022/05/28/react-JSX%E8%BD%AC%E6%8D%A2%E6%88%90%E7%9C%9F%E5%AE%9EDOM%E7%9A%84%E8%BF%87%E7%A8%8B/" title="react-JSX转换成真实DOM的过程">react-JSX转换成真实DOM的过程</a><time datetime="2022-05-28T00:54:49.000Z" title="发表于 2022-05-28 08:54:49">2022-05-28</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/27/%E5%BC%82%E6%AD%A5%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%92%8C%E4%B8%B2%E8%A1%8C/" title="异步的并行和串行"><img src="/img/yu3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="异步的并行和串行"/></a><div class="content"><a class="title" href="/2022/05/27/%E5%BC%82%E6%AD%A5%E7%9A%84%E5%B9%B6%E8%A1%8C%E5%92%8C%E4%B8%B2%E8%A1%8C/" title="异步的并行和串行">异步的并行和串行</a><time datetime="2022-05-27T11:02:54.000Z" title="发表于 2022-05-27 19:02:54">2022-05-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/26/useEffect/" title="useEffect"><img src="/img/yu3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="useEffect"/></a><div class="content"><a class="title" href="/2022/05/26/useEffect/" title="useEffect">useEffect</a><time datetime="2022-05-26T12:10:15.000Z" title="发表于 2022-05-26 20:10:15">2022-05-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/05/24/jsonp%E5%8E%9F%E7%90%86/" title="jsonp原理"><img src="/img/yu3.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="jsonp原理"/></a><div class="content"><a class="title" href="/2022/05/24/jsonp%E5%8E%9F%E7%90%86/" title="jsonp原理">jsonp原理</a><time datetime="2022-05-24T01:48:49.000Z" title="发表于 2022-05-24 09:48:49">2022-05-24</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2016 - 2022 By QinxiBlog</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">本地搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
